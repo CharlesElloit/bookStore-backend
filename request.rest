@@ -1,0 +1,58 @@
+# Create a new book
+POST http://localhost:13700/books
+Content-Type: application/json
+
+{
+   "title": "test",
+   "subtitle": "Peter Pan in Kensington Gardens",
+   "description": "sort description about Peter Pan book",
+   "bookEdition": "This edition published in 2019 by Arcturus Publishing Limited 26/27 Bickels Yard, 151-153 Bermondsey Street, London SE1 3HA",
+   "bookCover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvlnZ8px_6PI_nVRv3f-8Z0YcltmcOiFgA0Q&usqp=CAU",
+   "author": "Sir James Matthew Barrie",
+   "publisher": "Arcturus Publishing Limited",
+   "published_Date": "17-jan-2019",
+   "ISBN": "978-1-78428-428-2"
+}
+
+# Get all books
+###
+GET http://localhost:13700/books
+
+
+# Update a book
+###
+PUT http://localhost:13700/books/600ca185cf02390bfb360e38
+
+
+# Delete a book
+###
+DELETE http://localhost:13700/books/600ca718f8ed990e0ff50eb1
+
+
+# Register a Customer
+###
+POST http://localhost:13700/register
+Content-Type: application/json
+
+{
+   "firstName": "Mary",
+   "lastName": "Smith",
+   "email": "mary@gmail.com",
+   "password": "123456"
+}
+
+
+# Get all customers
+###
+GET http://localhost:13700/customers
+
+
+
+### Login Customer
+POST http://localhost:13700/login
+Content-Type: application/json
+
+{
+   "email": "mary@gmail.com",
+   "password": "123456"
+}
