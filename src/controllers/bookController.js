@@ -26,7 +26,7 @@ exports.createBook = async (req, res) => {
   } catch (error) {
     console.log(error.message);
     return res.status(500).json({
-      error: new Error("Something went wrong")
+      error: "Something went wrong went creating the book"
     });
   }
 };
