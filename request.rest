@@ -1,17 +1,39 @@
+# use this link to fetch more book information
+# https://www.googleapis.com/books/v1/volumes?q=[pass in the name of the book]
+
+
 # Create a new book
 POST http://localhost:13700/books
 Content-Type: application/json
 
 {
-   "title": "test",
-   "subtitle": "Peter Pan in Kensington Gardens",
-   "description": "sort description about Peter Pan book",
-   "bookEdition": "This edition published in 2019 by Arcturus Publishing Limited 26/27 Bickels Yard, 151-153 Bermondsey Street, London SE1 3HA",
-   "bookCover": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvlnZ8px_6PI_nVRv3f-8Z0YcltmcOiFgA0Q&usqp=CAU",
-   "author": "Sir James Matthew Barrie",
-   "publisher": "Arcturus Publishing Limited",
-   "published_Date": "17-jan-2019",
-   "ISBN": "978-1-78428-428-2"
+   "title": "Black Beauty",
+   "subtitle":	"High Interest Classics with Comprehension Activities",
+   "authors": "Anna Sewell",
+   "publisher": "EDCON Publishing Group",
+   "publishedDate": "2003-07",
+   "description":	"An abridged version of the story complete with vocabulary and comprehension checks for beginning readers. Divided into ten short chapters written using McGraw-Hill's Core Vocabulary and measured by the Fry Readability Formula, the workbook includes questions that test for comprehension, critical thinking, inference, recall of detail, and sequencing.",
+   "industryIdentifiers":
+      {
+         "type": "ISBN_10",
+         "identifier": "0931334519"
+      }
+   ,
+   "pageCount": 137,
+   "categories": ["Juvenile Fiction"],
+   "bookCoverImageLinks": 
+      {
+         "thumbnail": "http://books.google.com/books/content?id=xu3bADLsheQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+  "bookEdition": "This edition published in 2019 by Arcturus Publishing Limited 26/27 Bickels Yard, 151-153 Bermondsey Street, London SE1 3HA",
+   "language": "en",
+   "epub": {
+    "isAvailable": false
+  },
+  "pdf": {
+    "isAvailable": true,
+    "downloadLink": "http://pinkmonkey.com/dl/library1/digi105.pdf"
+  }
 }
 
 # Get all books
@@ -21,12 +43,12 @@ GET http://localhost:13700/books
 
 # Update a book
 ###
-PUT http://localhost:13700/books/600ca185cf02390bfb360e38
+PUT http://localhost:13700/books/601c2948368f4e47fcfb4135
 
 
 # Delete a book
 ###
-DELETE http://localhost:13700/books/600ca718f8ed990e0ff50eb1
+DELETE http://localhost:13700/books/601c4a03799d95064b393390
 
 
 # Register a Customer
