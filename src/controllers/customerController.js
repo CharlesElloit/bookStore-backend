@@ -103,14 +103,12 @@ exports.loginCustomer = async (req, res) => {
       customerId: customerExist._id
     };
 
-    //creating a token for login in Customer from the frontend
+    //creating a token for loging in the Customer from the frontend
     const token = jwt.sign(payload, process.env.SECRET_KEY);
 
     req.headers.authorization = token;
 
     res.status(200).json({ token });
-
-    //
   } catch (error) {
     console.log(error.message);
     return res.status(500).json({
@@ -153,7 +151,7 @@ exports.login = (req, res) => {
             customerId: data._id
           };
 
-          //creating a token for login in Customer from the frontend
+          //creating a token for loging in the Customer from the frontend
           const token = jwt.sign(payload, process.env.SECRET_KEY);
           req.headers.authorization = token;
           return res.status(200).json({ token });
@@ -175,11 +173,8 @@ exports.login = (req, res) => {
 };
 
 /* 
-
 =========== getAllCustomers ===========
-
 */
-
 exports.getAllCustomers = (req, res) => {
   db.Customer.find({})
     .then(data => {

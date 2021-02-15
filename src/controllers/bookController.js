@@ -35,23 +35,11 @@ exports.createBook = async (req, res) => {
  ============= Get all books route =============
 */
 exports.getAllBooks = async (req, res) => {
-  const books = await db.Book.find();
-  if (!books) {
-    return res.status(404).json({
-      error: "There are no books in the store"
-    });
-  }
-
-  return res.status(200).json(books);
-};
-
-//Get all books
-exports.getAllBooks = async (req, res) => {
   try {
     const books = await db.Book.find({});
     if (!books) {
       return res.status(500).json({
-        error: new Error("Books are found")
+        error: "There are no books found in the store."
       });
     }
 
@@ -59,7 +47,7 @@ exports.getAllBooks = async (req, res) => {
   } catch (error) {
     console.log(error.message);
     return res.status(500).json({
-      error: new Error("Something went wrong")
+      error: "Something went wrong"
     });
   }
 };
@@ -69,8 +57,6 @@ exports.getAllBooks = async (req, res) => {
 */
 exports.updateBook = async (req, res) => {
   // TODO
-  // - validation
-  // - only the own should delete the book
 };
 
 /*
@@ -81,7 +67,7 @@ exports.deleteBook = async (req, res) => {
     // TODO
     // - only the own should delete the book
 
-    // check if the book to delete exist
+    // check if the book to delete exist in the database
     const isBookToDeleteExist = await db.Book.findById({ _id: req.params.id });
     if (!isBookToDeleteExist) {
       return res.json({
@@ -89,12 +75,13 @@ exports.deleteBook = async (req, res) => {
       });
     }
 
+    //if the book exist, we gonna find it and delete it.
     const bookToDelete = await db.Book.findByIdAndDelete({
       _id: req.params.id
     });
     if (!bookToDelete) {
       return res.status(404).json({
-        error: new Error("The book you want to delete doesn't exist")
+        error: "The book you want to delete doesn't exist"
       });
     }
 
@@ -104,7 +91,7 @@ exports.deleteBook = async (req, res) => {
   } catch (error) {
     console.log(error.message);
     return res.status(500).json({
-      error: new Error("Something went wrong")
+      error: "Something isn't right try again"
     });
   }
 };
