@@ -8,10 +8,6 @@
   "description": "Scottish writer J M Barrie wrote both a play and a novel about the boy Peter Pan, who wouldn't grow up. This is the novel. Peter Pan lives with all the other Lost Boys in Neverland, where they never have to grow up. He visits Wendy Darling by flying through her bedroom window, and brings she and her brothers into Neverland where they encounter the fairy Tinkerbell, the princess Tiger Lily and the pirate Captain Cook.",
   "industryIdentifiers": [
     {
-      "type": "ISBN_10",
-      "identifier": "1775415007"
-    },
-    {
       "type": "ISBN_13",
       "identifier": "9781775415008"
     }
