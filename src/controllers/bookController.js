@@ -8,7 +8,6 @@ exports.createBook = async (req, res) => {
     /*  
      ::TODO
      - validation
-
     */
     const book = new db.Book(req.body);
 
